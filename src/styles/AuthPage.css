@@ -1,0 +1,92 @@
+/* src/styles/AuthPage.css */
+
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px); /* Altura da viewport menos a altura aproximada do header */
+  padding: 20px;
+  animation: fadeIn 0.8s ease-out; /* Animação de fade-in para a página */
+}
+
+.auth-card {
+  background-color: var(--color-card-background); /* Fundo do card do tema */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid var(--color-border); /* Borda do card */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transição para tema */
+}
+
+.auth-card h2 {
+  color: var(--color-primary);
+  margin-bottom: 30px;
+  font-size: 2em;
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-dark-text); /* Cor do texto da label */
+}
+
+.message {
+  margin-top: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  animation: slideInFromTop 0.5s ease-out; /* Animação para mensagens */
+}
+
+.success-message {
+  background-color: var(--color-success);
+  color: white;
+}
+
+.error-message {
+  background-color: var(--color-error);
+  color: white;
+}
+
+.auth-link-text {
+  margin-top: 20px;
+  font-size: 0.9em;
+  color: var(--color-dark-text); /* Cor do texto do link de auth */
+}
+
+/* Animações CSS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .auth-card {
+    padding: 30px 20px; /* Reduz padding em telas menores */
+  }
+
+  .auth-card h2 {
+    font-size: 1.8em;
+  }
+}

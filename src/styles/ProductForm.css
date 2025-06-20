@@ -1,0 +1,62 @@
+/* src/styles/ProductForm.css */
+
+.product-form-container {
+  background-color: var(--color-card-background);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  max-width: 500px;
+  width: 100%;
+  margin: 40px auto; /* Espaçamento acima/abaixo e centralização */
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  animation: fadeIn 0.6s ease-out; /* Animação de entrada do formulário */
+}
+
+.product-form-container h3 {
+  font-size: 1.8em;
+  color: var(--color-primary);
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.form-group { /* Reutilizando do AuthPage.css, mas garantindo aqui */
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: bold;
+  color: var(--color-dark-text);
+}
+
+/* Inputs e Textarea já estilizados em GlobalStyles.css */
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end; /* Botões alinhados à direita */
+  gap: 15px; /* Espaçamento entre os botões */
+  margin-top: 25px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    font-size: 1em;
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .product-form-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+    .form-actions {
+        flex-direction: column; /* Empilha botões em telas pequenas */
+        align-items: center;
+    }
+    .form-actions button {
+        width: 100%;
+    }
+}

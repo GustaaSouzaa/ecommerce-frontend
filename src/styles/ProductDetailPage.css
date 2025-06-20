@@ -1,0 +1,116 @@
+/* src/styles/ProductDetailPage.css */
+
+.product-detail-page {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha o conteúdo no topo da seção principal */
+  padding: 40px 20px; /* Padding ao redor da página */
+  min-height: calc(100vh - 80px); /* Garante que a página ocupe o espaço vertical (vh - altura do header) */
+  animation: fadeIn 0.8s ease-out; /* Animação de fade-in na entrada da página */
+}
+
+.product-detail-card {
+  background-color: var(--color-card-background); /* Fundo do card do tema */
+  padding: 40px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2); /* Sombra mais pronunciada */
+  max-width: 700px; /* Largura máxima para o card de detalhes */
+  width: 100%; /* Ocupa a largura total disponível dentro do max-width */
+  text-align: center; /* Centraliza o texto */
+  border: 1px solid var(--color-border); /* Borda do card */
+  transition: background-color 0.3s ease, border-color 0.3s ease; /* Transições suaves para mudança de tema */
+}
+
+.product-detail-name {
+  font-size: 2.8em; /* Aumentado um pouco para destaque */
+  color: var(--color-primary); /* Cor primária para o nome do produto */
+  margin-bottom: 25px; /* Espaçamento abaixo do nome */
+  animation: slideInFromTop 0.6s ease-out; /* Animação de entrada */
+}
+
+.product-detail-description {
+  font-size: 1.15em; /* Ligeiramente maior para legibilidade */
+  color: var(--color-dark-text); /* Cor de texto do tema */
+  margin-bottom: 30px; /* Espaçamento abaixo da descrição */
+  line-height: 1.7; /* Aumenta a altura da linha para melhor leitura */
+}
+
+.product-detail-price {
+  font-size: 2em; /* Maior destaque para o preço */
+  font-weight: bold;
+  color: var(--color-dark-text);
+  margin-bottom: 20px;
+}
+
+.product-detail-stock {
+  font-size: 1.1em;
+  color: var(--color-dark-text);
+  margin-bottom: 40px; /* Mais espaço antes do botão */
+}
+
+.product-detail-card button {
+  padding: 15px 30px;
+  font-size: 1.2em;
+  width: auto;
+}
+
+.no-product-found {
+    text-align: center;
+    font-size: 1.5em;
+    padding: 50px;
+    color: var(--color-error); /* Cor de erro do tema */
+}
+
+/* Animações (referenciadas de GlobalStyles ou definidas aqui para clareza) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .product-detail-page {
+    padding: 20px 10px; /* Padding reduzido para telas pequenas */
+    align-items: center; /* Centraliza verticalmente no mobile se conteúdo for pequeno */
+  }
+
+  .product-detail-card {
+    padding: 25px;
+  }
+
+  .product-detail-name {
+    font-size: 2em;
+    margin-bottom: 15px;
+  }
+
+  .product-detail-description {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .product-detail-price {
+    font-size: 1.6em;
+    margin-bottom: 10px;
+  }
+
+  .product-detail-stock {
+    font-size: 0.9em;
+    margin-bottom: 25px;
+  }
+
+  .product-detail-card button {
+    width: 100%; /* Botão em largura total no mobile */
+    padding: 12px 0;
+  }
+}

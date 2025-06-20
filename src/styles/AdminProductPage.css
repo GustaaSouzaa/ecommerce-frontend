@@ -1,0 +1,112 @@
+/* src/styles/AdminProductPage.css */
+
+.admin-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  color: var(--color-dark-text);
+  animation: fadeIn 1s ease-out;
+}
+
+.admin-page .add-new-button {
+  display: block; /* Ocupa a largura total */
+  margin: 20px auto 40px auto; /* Centraliza e adiciona espaçamento */
+  padding: 12px 25px;
+  font-size: 1.1em;
+  width: fit-content; /* Ajusta a largura ao conteúdo */
+  animation: fadeIn 0.8s ease-out 0.2s forwards; /* Animação com delay */
+  opacity: 0; /* Começa invisível */
+}
+
+.admin-product-list {
+  background-color: var(--color-card-background);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border: 1px solid var(--color-border);
+  overflow-x: auto; /* Permite rolagem horizontal em tabelas grandes no mobile */
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  animation: slideInFromBottom 0.8s ease-out forwards;
+  animation-delay: 0.4s;
+  opacity: 0;
+}
+
+.product-admin-table {
+  width: 100%;
+  border-collapse: collapse; /* Remove espaçamento entre bordas da célula */
+  color: var(--color-dark-text);
+}
+
+.product-admin-table th,
+.product-admin-table td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid var(--color-light-gray); /* Linha divisória */
+}
+
+.product-admin-table th {
+  background-color: var(--color-secondary-bg); /* Fundo para o cabeçalho da tabela */
+  font-weight: bold;
+  color: var(--color-primary-dark);
+  white-space: nowrap; /* Evita que o texto do cabeçalho quebre linha */
+}
+
+.product-admin-table td {
+  font-size: 0.95em;
+}
+
+.product-admin-table tbody tr:hover {
+  background-color: var(--color-light-gray); /* Efeito de hover na linha da tabela */
+}
+
+.admin-actions {
+  display: flex;
+  gap: 10px; /* Espaçamento entre botões de ação */
+  white-space: nowrap; /* Evita que os botões quebrem linha */
+}
+
+.admin-actions .edit-button {
+    background-color: #007bff; /* Azul primário para editar */
+}
+
+.admin-actions .edit-button:hover {
+    background-color: #0056b3;
+}
+
+.admin-actions .delete-button {
+    background-color: #dc3545; /* Vermelho para deletar */
+}
+
+.admin-actions .delete-button:hover {
+    background-color: #bd2130;
+}
+
+/* Mensagens (reaproveitando estilos globais) */
+.no-products-message {
+  text-align: center;
+  padding: 20px;
+  color: var(--color-dark-text);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .admin-product-list {
+        padding: 15px;
+    }
+
+    .product-admin-table th,
+    .product-admin-table td {
+        padding: 8px 10px;
+        font-size: 0.85em;
+    }
+
+    .admin-actions {
+        flex-direction: column; /* Empilha botões de ação */
+        gap: 5px;
+    }
+    .admin-actions button {
+        width: 100%;
+        padding: 5px 8px;
+        font-size: 0.8em;
+    }
+}

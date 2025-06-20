@@ -1,0 +1,16 @@
+# Logs
+logs/
+*.log
+
+# Dependency directories
+node_modules/
+.npm/
+
+# Vite
+/dist/
+.vite/
+
+# Other
+.env
+.env.local
+.DS_Store

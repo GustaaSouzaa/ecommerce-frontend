@@ -1,0 +1,117 @@
+/* src/styles/CartPage.css */
+
+.cart-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  color: var(--color-dark-text);
+  animation: fadeIn 1s ease-out;
+}
+
+.empty-cart-message {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.2em;
+  color: var(--color-dark-text);
+}
+
+.cart-items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espaçamento entre os itens do carrinho */
+  margin-bottom: 30px;
+}
+
+.cart-item-card {
+  background-color: var(--color-card-background);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between; /* Detalhes à esquerda, botão à direita */
+  align-items: center;
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.item-details h3 {
+  font-size: 1.3em;
+  margin-bottom: 5px;
+  color: var(--color-primary);
+}
+
+.item-details p {
+  font-size: 0.9em;
+  color: var(--color-dark-text);
+  margin-bottom: 5px;
+}
+
+.item-subtotal {
+  font-weight: bold;
+  font-size: 1.1em;
+  color: var(--color-dark-text);
+  margin-top: 10px;
+}
+
+.cart-summary {
+  background-color: var(--color-card-background);
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: right;
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.cart-summary h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: var(--color-primary);
+}
+
+.cart-actions {
+  display: flex;
+  gap: 15px; /* Espaçamento entre os botões */
+  justify-content: flex-end;
+  flex-wrap: wrap; /* Garante responsividade dos botões */
+}
+
+.cart-actions button {
+  padding: 12px 20px;
+  font-size: 1.1em;
+}
+
+.secondary-button { /* Estilo para botões de "Remover", "Esvaziar" */
+  background-color: var(--color-light-gray);
+  color: var(--color-dark-text);
+  border: 1px solid var(--color-border);
+}
+
+.secondary-button:hover {
+  background-color: var(--color-border);
+  transform: translateY(-2px);
+}
+
+/* Animações (reaproveitando do GlobalStyles) */
+@keyframes fadeIn { /* Definido em GlobalStyles, mas replicando para clareza */
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .cart-item-card {
+    flex-direction: column; /* Empilha detalhes e botão */
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .cart-actions {
+    flex-direction: column; /* Botões em coluna */
+    align-items: center;
+  }
+
+  .cart-actions button {
+    width: 100%;
+  }
+}

@@ -1,0 +1,13 @@
+/* src/styles/HomePage.css */
+.home-page-container {
+  text-align: center;
+  padding: 50px 20px;
+  color: var(--color-dark-text); /* Garante que o texto seja legível no tema */
+}
+
+/* Media query para responsividade se necessário */
+@media (max-width: 768px) {
+    .home-page-container {
+        padding: 30px 15px;
+    }
+}

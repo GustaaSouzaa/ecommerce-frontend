@@ -1,0 +1,135 @@
+/* src/styles/ProductListPage.css */
+
+.product-list-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  color: var(--color-dark-text); /* Título se adapta ao tema */
+  animation: fadeIn 1s ease-out; /* Animação para o título */
+}
+
+.product-grid {
+  display: grid; /* Layout de grade */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Colunas responsivas */
+  gap: 30px; /* Espaçamento entre os cards */
+  justify-content: center; /* Centraliza a grade */
+  animation: slideInFromBottom 0.8s ease-out forwards; /* Animação para a grade */
+  animation-delay: 0.3s; /* Pequeno atraso para a animação começar */
+  opacity: 0; /* Começa invisível para a animação */
+}
+
+.product-card {
+  background-color: var(--color-card-background); /* Fundo do card do tema */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra mais suave */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espaço entre conteúdo e botão */
+  border: 1px solid var(--color-border); /* Borda do card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, border-color 0.3s ease; /* Transições no hover e tema */
+}
+
+.product-card:hover {
+  transform: translateY(-5px); /* Animação de levantar no hover */
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.product-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: var(--color-primary); /* Título do produto com cor primária */
+}
+
+.product-description {
+  font-size: 0.9em;
+  color: var(--color-dark-text);
+  margin-bottom: 15px;
+  flex-grow: 1; /* Faz a descrição ocupar o espaço restante */
+}
+
+.product-price {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: var(--color-dark-text);
+  margin-bottom: 10px;
+}
+
+.product-stock {
+  font-size: 0.9em;
+  color: var(--color-dark-text);
+  margin-bottom: 15px;
+}
+
+.product-card button {
+  width: auto; /* Ajusta a largura do botão para o conteúdo */
+  align-self: center; /* Centraliza o botão dentro do card */
+}
+
+.loading-message, .error-display, .no-products-message {
+  text-align: center;
+  padding: 50px;
+  font-size: 1.2em;
+  color: var(--color-dark-text);
+}
+
+.cart-feedback-message {
+  text-align: center;
+  margin: 20px auto;
+  padding: 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  width: 100%;
+  max-width: 600px;
+  color: white; /* Cor do texto para mensagens de feedback */
+  animation: slideInFromTop 0.5s ease-out; /* Animação de entrada */
+}
+
+/* Animações CSS */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .product-grid {
+    grid-template-columns: 1fr; /* Uma coluna em telas pequenas */
+    gap: 20px;
+  }
+
+  .product-card {
+    padding: 20px;
+  }
+}
+.product-card-link {
+    text-decoration: none; /* Remove o sublinhado do link */
+    color: inherit; /* Herda a cor do texto do pai */
+}
+
+.product-card-link:hover .product-card { /* Efeito de hover no card através do link */
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+}

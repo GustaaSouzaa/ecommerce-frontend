@@ -1,0 +1,138 @@
+/* src/styles/OrderHistoryPage.css */
+
+.order-history-page h2 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2em;
+  color: var(--color-dark-text); /* Título se adapta ao tema */
+  animation: fadeIn 1s ease-out; /* Animação para o título */
+}
+
+.no-orders-message {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.2em;
+  color: var(--color-dark-text);
+  animation: fadeIn 0.8s ease-out; /* Animação para a mensagem */
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espaçamento entre os cards de pedido */
+}
+
+.order-card {
+  background-color: var(--color-card-background); /* Fundo do card do tema */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); /* Sombra suave */
+  border: 1px solid var(--color-border); /* Borda do card */
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease; /* Transições no hover e tema */
+  animation: slideInFromBottom 0.8s ease-out forwards; /* Animação de entrada para cada card */
+}
+
+.order-card:hover {
+    transform: translateY(-3px); /* Efeito de levantar no hover */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25); /* Sombra mais pronunciada no hover */
+}
+
+.order-card h3 {
+  font-size: 1.6em; /* Um pouco maior para destaque do número do pedido */
+  margin-bottom: 15px;
+  color: var(--color-primary); /* Cor primária para o título do pedido */
+  border-bottom: 1px solid var(--color-light-gray); /* Linha divisória abaixo do título */
+  padding-bottom: 10px;
+}
+
+.order-card p {
+  font-size: 0.95em;
+  color: var(--color-dark-text);
+  margin-bottom: 8px;
+}
+
+.order-total {
+  font-size: 1.3em; /* Mais destaque para o total */
+  font-weight: bold;
+  margin-top: 15px;
+  color: var(--color-dark-text);
+  text-align: right; /* Alinha o total à direita */
+  border-top: 1px dashed var(--color-border); /* Linha pontilhada acima do total */
+  padding-top: 10px;
+}
+
+.order-card h4 {
+  font-size: 1.2em;
+  margin-top: 25px; /* Mais espaço acima do título dos itens */
+  margin-bottom: 15px;
+  color: var(--color-primary-dark);
+}
+
+.order-items-list {
+  list-style: none; /* Remove marcadores de lista */
+  padding-left: 0;
+  border-top: 1px solid var(--color-light-gray); /* Linha divisória acima da lista de itens */
+  padding-top: 15px;
+}
+
+.order-item-detail {
+  background-color: var(--color-secondary-bg); /* Fundo sutil para cada item */
+  padding: 12px 18px;
+  border-radius: 5px;
+  margin-bottom: 10px; /* Mais espaço entre itens */
+  display: flex;
+  justify-content: space-between; /* Texto e subtotal em lados opostos */
+  align-items: center;
+  font-size: 0.9em;
+  color: var(--color-dark-text);
+  border: 1px solid var(--color-border);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.order-item-detail span { /* Para estilizar o subtotal dentro do item */
+    font-weight: bold;
+    color: var(--color-primary-dark);
+}
+
+/* Animações (referenciadas de GlobalStyles ou definidas aqui para clareza) */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .order-card {
+    padding: 20px;
+  }
+
+  .order-card h3 {
+    font-size: 1.4em;
+    margin-bottom: 10px;
+  }
+
+  .order-total {
+    font-size: 1.1em;
+  }
+
+  .order-card h4 {
+    font-size: 1em;
+  }
+
+  .order-item-detail {
+    flex-direction: column; /* Empilha os detalhes do item */
+    align-items: flex-start;
+    padding: 10px;
+  }
+}
